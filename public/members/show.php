@@ -1,7 +1,10 @@
 <?php 
   require_once('../../private/initialize.php'); 
+  
   $id = $_GET['id'] ?? '1'; // PHP > 7.0
+
   $member = Member::find_by_id($id);
+
   $page_title = 'Show All Users: ' . h($member->full_name());
   include(SHARED_PATH . '/member-header.php'); 
 ?>

@@ -16,9 +16,9 @@ $members = Member::find_all();
         <th>Username</th>
         <th>Email</th>
         <th>User Level</th>
-        <th>&nbsp;</th>
-        <th>&nbsp;</th>
-        <th>&nbsp;</th>
+        <th>View User Info</th>
+        <th>Edit User</th>
+        <th>Delete User</th>
       </tr>
 
       <?php foreach($members as $member) { ?>

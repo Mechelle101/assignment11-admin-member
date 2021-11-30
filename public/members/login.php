@@ -45,10 +45,10 @@ if(is_post_request()) {
 
   <form action="login.php" method="post">
     Username:<br>
-    <input type="text" name="username" value="<?= h($username); ?>" /><br />
+    <input type="text" name="username" value="<?= h($username); ?>"><br>
     Password:<br>
-    <input type="password" name="password" value="" /><br>
-    <input type="submit" name="submit" value="Submit"  />
+    <input type="password" name="password" value=""><br>
+    <input type="submit" name="submit" value="Submit">
   </form>
 
 </div>

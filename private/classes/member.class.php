@@ -65,7 +65,6 @@ public function verify_password($password) {
 
 
 // validate method for Admin class
-
 protected function validate() {
   $this->errors = [];
 
@@ -133,7 +132,7 @@ static public function find_by_username($username) {
   }
 }
 
-  }
+}
 
 
 
