@@ -17,7 +17,6 @@
     redirect_to(url_for('/members/index.php'));
   }
 
-
   if(is_post_request()) {
 
     // Save record using post parameters
@@ -36,7 +35,9 @@
   } else { ?>
   
     <form action="<?= url_for('members/edit.php?id=' . h(u($id))); ?>" method="post">
+
       <?php include('form_fields.php'); ?>
+      
       <input type="submit" value="Edit User" />
     </form>
   <?php } ?>

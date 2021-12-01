@@ -54,8 +54,8 @@ public function verify_password($password) {
 
   protected function update() {
     if($this->password != '') {
-      $this->set_hashed_password();
       // validate the password
+      $this->set_hashed_password();
     } else {
       // password not being updated - skip hashing and validation
       $this->password_required = false;
@@ -63,11 +63,9 @@ public function verify_password($password) {
     return parent::update();
   }
 
-
-// validate method for Admin class
+// validate method for Member class
 protected function validate() {
   $this->errors = [];
-
   if(is_blank($this->first_name)) {
     $this->errors[] = "First name cannot be blank.";
   } elseif (!has_length($this->first_name, array('min' => 2, 'max' => 255))) {
@@ -99,8 +97,8 @@ protected function validate() {
   if($this->password_required) {
     if(is_blank($this->password)) {
       $this->errors[] = "Password cannot be blank.";
-    } elseif (!has_length($this->password, array('min' => 12))) {
-      $this->errors[] = "Password must contain 12 or more characters";
+    } elseif (!has_length($this->password, array('min' => 8))) {
+      $this->errors[] = "Password must contain 8 or more characters";
     } elseif (!preg_match('/[A-Z]/', $this->password)) {
       $this->errors[] = "Password must contain at least 1 uppercase letter";
     } elseif (!preg_match('/[a-z]/', $this->password)) {
@@ -133,6 +131,3 @@ static public function find_by_username($username) {
 }
 
 }
-
-
-

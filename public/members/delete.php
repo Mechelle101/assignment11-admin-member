@@ -1,12 +1,10 @@
 <?php
-
   require_once('../../private/initialize.php');
-
   $page_title = 'Delete Member'; 
   include(SHARED_PATH . '/member-header.php'); 
 ?>
 
-  <a class="back-link" href="<?php echo url_for('/members/index.php'); ?>">&laquo; Back to List</a>
+<a class="back-link" href="<?php echo url_for('/members/index.php'); ?>">&laquo; Back to List</a>
 
 <?php
   if(!isset($_GET['id'])) {

@@ -6,7 +6,6 @@ $username = '';
 $password = '';
 
 if(is_post_request()) {
-
   $username = $_POST['username'] ?? '';
   $password = $_POST['password'] ?? '';
 
@@ -25,7 +24,7 @@ if(is_post_request()) {
     if($member != false && $member->verify_password($password)) {
       // Mark admin as logged in
       // Review this line
-      $session->login($member);
+      //$session->login($member);
       redirect_to(url_for('/members/index.php'));
     } else {
       // username not found or password does not match
@@ -33,14 +32,15 @@ if(is_post_request()) {
     }
   }
 }
-?>
+ 
+$page_title = 'Log in'; 
+include(SHARED_PATH . '/header.php'); 
 
-<?php $page_title = 'Log in'; ?>
-<?php include(SHARED_PATH . '/header.php'); ?>
+?>
 
 <div id="content">
   <h1>Log in</h1>
-
+  
   <?= display_errors($errors); ?>
 
   <form action="login.php" method="post">

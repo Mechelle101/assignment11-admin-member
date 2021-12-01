@@ -68,7 +68,6 @@ class DatabaseObject {
     $this->errors = [];
 
     // add here
-
     return $this->errors;
   }
 

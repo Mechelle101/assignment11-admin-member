@@ -12,7 +12,6 @@
     <header>
       <h1>
         <a href="<?= url_for('/index.php'); ?>">
-         
           WNC Birds
         </a>
       </h1>
